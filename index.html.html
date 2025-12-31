@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY 2026 🚀 The New Year Meme Coin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0e27;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: radial-gradient(circle at 50% 50%, #1a1f3a 0%, #0a0e27 100%);
+        }
+
+        .bg-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 215, 0, 0.6);
+            border-radius: 50%;
+            animation: float linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+        .content {
+            z-index: 10;
+            text-align: center;
+            padding: 2rem;
+            max-width: 1200px;
+        }
+
+        .logo {
+            font-size: 8rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.8));
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+            }
+            50% {
+                filter: drop-shadow(0 0 40px rgba(255, 215, 0, 1));
+            }
+        }
+
+        .subtitle {
+            font-size: 2rem;
+            color: #00d4ff;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .countdown-complete {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid #ffd700;
+            border-radius: 20px;
+            padding: 2rem 4rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            animation: borderGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { border-color: #ffd700; box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+            50% { border-color: #ffed4e; box-shadow: 0 0 40px rgba(255, 215, 0, 0.6); }
+        }
+
+        .countdown-complete h2 {
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-complete p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .btn {
+            padding: 1.5rem 3rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #0a0e27;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #00d4ff;
+            border: 2px solid #00d4ff;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+        }
+
+        .stats {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 4rem;
+        }
+
+        .stat-box {
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+
+        .firework {
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+
+        .video-section {
+            margin: 4rem 0;
+            width: 100%;
+        }
+
+        .video-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ffd700 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            aspect-ratio: 16 / 9;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+            border: 3px solid rgba(255, 215, 0, 0.5);
+            background: #000;
+            animation: videoBorderGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes videoBorderGlow {
+            0%, 100% { 
+                border-color: rgba(255, 215, 0, 0.5);
+                box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+            }
+            50% { 
+                border-color: rgba(0, 212, 255, 0.8);
+                box-shadow: 0 20px 60px rgba(255, 215, 0, 0.5);
+            }
+        }
+
+        .video-note {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .upload-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn-upload {
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(162, 155, 254, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-upload:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(162, 155, 254, 0.6);
+        }
+
+        .upload-note {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .stats {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 4rem;
+        
+        
+            position: fixed;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: explode 2s ease-out infinite;
+            z-index: 5;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty));
+                opacity: 0;
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            z-index: 5;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo { font-size: 4rem; }
+            h1 { font-size: 2.5rem; letter-spacing: 2px; }
+            .subtitle { font-size: 1.3rem; }
+            .tagline { font-size: 1.1rem; }
+            .countdown-complete h2 { font-size: 2rem; }
+            .btn { padding: 1rem 2rem; font-size: 1rem; }
+            .stat-number { font-size: 2rem; }
+            .cta-buttons { gap: 1rem; }
+            .video-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="bg-animation" id="bgAnimation"></div>
+        
+        <div class="content">
+            <div class="logo">🎉</div>
+            <h1>HAPPY 2026</h1>
+            <div class="subtitle">The Ultimate New Year Meme Coin</div>
+            <p class="tagline">We've made it to 2026! Join the celebration and ride the wave of the most festive crypto in the metaverse 🚀</p>
+            
+            <div class="countdown-complete">
+                <h2>🎊 WE'RE LIVE! 🎊</h2>
+                <p>The countdown is over. The party has begun!</p>
+            </div>
+
+            <div class="video-section">
+                <h2 class="video-title">🎬 WATCH THE HYPE</h2>
+                <div class="video-container">
+                    <video 
+                        id="videoPlayer"
+                        width="100%" 
+                        height="100%" 
+                        controls
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        style="object-fit: contain;">
+                        <source src="happy2026.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+    <a href="https://join.pump.fun/HSag/pgvc74ks" target="_blank" class="btn btn-primary">BUY $HAPPY2026</a>
+</div>
+
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number" id="holders">0</div>
+                    <div class="stat-label">Holders</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const colors = ['#ffd700', '#00d4ff', '#ff6b6b', '#4ecdc4', '#f9ca24', '#a29bfe'];
+
+        // Create particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.width = (Math.random() * 4 + 2) + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            document.getElementById('bgAnimation').appendChild(particle);
+        }
+
+        for (let i = 0; i < 30; i++) {
+            createParticle();
+        }
+
+        // Create fireworks
+        function createFirework() {
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight * 0.5;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            for (let i = 0; i < 20; i++) {
+                const firework = document.createElement('div');
+                firework.className = 'firework';
+                firework.style.left = x + 'px';
+                firework.style.top = y + 'px';
+                firework.style.backgroundColor = color;
+                
+                const angle = (Math.PI * 2 * i) / 20;
+                const velocity = 50 + Math.random() * 100;
+                firework.style.setProperty('--tx', Math.cos(angle) * velocity + 'px');
+                firework.style.setProperty('--ty', Math.sin(angle) * velocity + 'px');
+                firework.style.animationDelay = Math.random() * 0.5 + 's';
+                
+                document.body.appendChild(firework);
+                setTimeout(() => firework.remove(), 2000);
+            }
+        }
+
+        setInterval(createFirework, 2000);
+
+        // Create confetti
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.top = '-10px';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.width = (Math.random() * 8 + 5) + 'px';
+            confetti.style.height = (Math.random() * 8 + 5) + 'px';
+            confetti.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            confetti.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(confetti);
+            
+            setTimeout(() => confetti.remove(), 6000);
+        }
+
+        setInterval(createConfetti, 200);
+
+        // Animate stats
+        function animateValue(id, start, end, duration, prefix = '', suffix = '') {
+            const obj = document.getElementById(id);
+            const range = end - start;
+            const increment = range / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= end) {
+                    current = end;
+                    clearInterval(timer);
+                }
+                obj.textContent = prefix + Math.floor(current).toLocaleString() + suffix;
+            }, 16);
+        }
+
+        setTimeout(() => {
+            animateValue('holders', 0, 8420, 2000);
+        }, 500);
+
+        // Allow Enter key to load video
+        document.addEventListener('DOMContentLoaded', function() {
+            // Page is ready
+        });
+        // Toggle sound function
+        function toggleSound() {
+            const audio = document.getElementById('celebrationSound');
+            const soundIcon = document.getElementById('soundIcon');
+            const soundControl = document.getElementById('soundControl');
+            
+            if (audio.paused) {
+                audio.play();
+                soundIcon.textContent = '🔊';
+                soundControl.classList.remove('muted');
+            } else {
+                audio.pause();
+                soundIcon.textContent = '🔇';
+                soundControl.classList.add('muted');
+            }
+        }
+    </script>
+</body>
+</html>
